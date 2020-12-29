@@ -1,3 +1,2 @@
 # form-validate
-[Live][]
-[Live]: https://codesandbox.io/s/fragrant-flower-hhh1r
+###[Live]###: <https://codesandbox.io/s/fragrant-flower-hhh1r>
