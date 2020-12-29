@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title></title>
   </head>
 
@@ -12,19 +12,36 @@
       </h1>
     </header>
     <main>
-      <form method="post" action="signup.php" class="form page-modal__form form " name="signup-form">
+      <form
+        method="post"
+        action="signup.php"
+        class="form page-modal__form form"
+        name="signup-form"
+      >
         <div class="form__field form__col">
           <label class="form__label form__label--top">
             E-mail
           </label>
-          <input class="form__input form__validate" type="email" placeholder="Ivanov@mail.ru" name="email" id="signup-email">
+          <input
+            class="form__input form__validate"
+            type="email"
+            placeholder="Ivanov@mail.ru"
+            name="email"
+            id="signup-email"
+          />
           <span class="form__error"></span>
         </div>
         <div class="form__field form__col">
           <label class="form__label form__label--top">
             Имя
           </label>
-          <input class="form__input form__validate" type="text" placeholder="Введите имя" name="name" id="signup-name">
+          <input
+            class="form__input form__validate"
+            type="text"
+            placeholder="Введите имя"
+            name="name"
+            id="signup-name"
+          />
           <span class="form__error"></span>
         </div>
         <div class="form__field form__col">
@@ -32,40 +49,66 @@
             Пароль
           </label>
           <div class="form__group">
-            <input class="form__input input-password js-input-password form__validate" type="password" placeholder="Введите пароль" name="password" id="signup-password">
-            <span class="input-password__icon input-password__icon js-toogle-password"></span>
-
+            <input
+              class="form__input input-password js-input-password form__validate"
+              type="password"
+              placeholder="Введите пароль"
+              name="password"
+              id="signup-password"
+            />
+            <span
+              class="input-password__icon input-password__icon js-toogle-password"
+            ></span>
           </div>
           <span class="form__error"></span>
-
         </div>
         <div class="form__field form__col">
           <label class="form__label form__label--top">
             Подтвердите пароль
           </label>
           <div class="form__group">
-            <input class="form__input input-password js-input-password form__validate" type="password" placeholder="Введите пароль" name="passwordConfirm" id="signup-password-confirm">
-            <span class="input-password__icon input-password__icon js-toogle-password"></span>
-
+            <input
+              class="form__input input-password js-input-password form__validate"
+              type="password"
+              placeholder="Введите пароль"
+              name="passwordConfirm"
+              id="signup-password-confirm"
+            />
+            <span
+              class="input-password__icon input-password__icon js-toogle-password"
+            ></span>
           </div>
           <span class="form__error"></span>
-
         </div>
         <div class="form__field">
           <div class="form__row">
             <label class="form__checkbox custom-check custom-check--start">
-              <input type="checkbox" name="confirm" id="confirm-checkbox" class="visually-hidden form__validate" value="">
+              <input
+                type="checkbox"
+                name="confirm"
+                id="confirm-checkbox"
+                class="visually-hidden form__validate"
+                value=""
+              />
               <span class="custom-check__checkbox"></span>
               <p class="custom-check__text custom-check__text--right">
-                Я согласен с <a href="" class="link link--external" target="_blank">Условиями использования сайта</a>, <a href="" class="link link--external" target="_blank">Политикой конфиденциальности</a> и на обработку персональных данных.
+                Я согласен с
+                <a href="" class="link link--external" target="_blank"
+                  >Условиями использования сайта</a
+                >,
+                <a href="" class="link link--external" target="_blank"
+                  >Политикой конфиденциальности</a
+                >
+                и на обработку персональных данных.
               </p>
             </label>
           </div>
-          
         </div>
-          <div class="form__bottom form__bottom--modal">
-            <button type="submit" class="btn btn--fill-accent "><span class="btn__body">Зарегистрироваться</span></button>
-          </div>
+        <div class="form__bottom form__bottom--modal">
+          <button type="submit" class="btn btn--fill-accent">
+            <span class="btn__body">Зарегистрироваться</span>
+          </button>
+        </div>
       </form>
     </main>
   </body>

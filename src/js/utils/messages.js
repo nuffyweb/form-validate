@@ -1,5 +1,6 @@
-const errorTemplate = (message) => (`<span class="form__error">${message}</span>`);
-const successTemplate = (message) => `<span class="form__success">${message}</span>`;
+const errorTemplate = (message) => `<span class="form-error">${message}</span>`;
+const successTemplate = (message) =>
+  `<span class="form-success">${message}</span>`;
 const successRestoreTemplate = (title, message) => {
   return `
     <div class="form-message">
@@ -11,25 +12,29 @@ const successRestoreTemplate = (title, message) => {
       </div>
   </div>
     `;
-}
+};
 const showError = (input, message) => {
-  const formField = input.closest('.form__field');
+  const formField = input.closest(".form__field");
 
-  formField.classList.remove('success');
-  formField.classList.add('error');
+  formField.classList.remove("success");
+  formField.classList.add("error");
   if (message) {
-    const errorField = formField.querySelector('.form__error');
-    errorField.textContent = '';
+    const errorField = formField.querySelector(".form__error");
+    errorField.textContent = "";
     errorField.textContent = message;
   }
 };
 const Success = (input) => {
-  const formField = input.closest('.form__field');
-  const errorField = formField.querySelector('.form__error');
-  errorField.textContent = '';
-  formField.classList.remove('error');
-  formField.classList.add('success');
+  const formField = input.closest(".form__field");
+  const errorField = formField.querySelector(".form__error");
+  errorField.textContent = "";
+  formField.classList.remove("error");
+  formField.classList.add("success");
 };
 export {
-  errorTemplate, successTemplate, successRestoreTemplate, showError, Success
+  errorTemplate,
+  successTemplate,
+  successRestoreTemplate,
+  showError,
+  Success
 };

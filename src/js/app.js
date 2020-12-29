@@ -1,25 +1,26 @@
 import "../scss/app.scss";
 
-import {
-  isEmpty,
-  isEmailValid,
-  isPasswordSecure,
-  isBetween,
-  isSame
-} from "./utils/simpleValide.js";
-import {
-  errorTemplate,
-  successTemplate,
-  successRestoreTemplate,
-  showError,
-  Success
-} from "./utils/messages.js";
+// import {
+//   isEmpty,
+//   isEmailValid,
+//   isPasswordSecure,
+//   isBetween,
+//   isSame
+// } from './utils/simpleValide.js';
+// import {
+//   errorTemplate,
+//   successTemplate,
+//   successRestoreTemplate,
+//   showError,
+//   Success
+// } from './utils/messages.js';
 import CheckFieldName from "./checkFields/checkFieldName.js";
 import CheckFieldEmail from "./checkFields/checkFieldEmail.js";
-import CheckFieldPassword from "./checkFields/checkFieldEmail.js";
+import CheckFieldPassword from "./checkFields/checkFieldPassword.js";
 import CheckFieldPasswordConfirm from "./checkFields/checkFieldPasswordConfirm.js";
 import CheckConfirm from "./checkFields/checkConfirm.js";
 import { debounce } from "./utils/helpers.js";
+
 document.addEventListener("DOMContentLoaded", function () {
   formSignUpData();
 });
@@ -69,7 +70,6 @@ function formOnInputCheck(form) {
     "input",
     debounce(function (evt) {
       let validate = new FormValidation(form);
-      console.log(evt);
       switch (evt.target.name) {
         case "name":
           validate.checkName();
@@ -87,22 +87,23 @@ function formOnInputCheck(form) {
     })
   );
 }
+function formSignUpDataValidate(form) {
+  let validate = new FormValidation(form);
+  let checkName = validate.checkName();
+  let checkEmail = validate.checkEmail();
+  let checkPassword = validate.checkPassword();
+  let checkPasswordConfirm = validate.checkPasswordConfirm();
+  let confirm = validate.checkConfirm();
+  let isFormValid =
+    checkName && checkEmail && checkPassword && checkPasswordConfirm && confirm;
+  return isFormValid;
+}
 function formSignUpData() {
   let form = document.forms.namedItem("signup-form");
   formOnInputCheck(form);
   form.addEventListener("submit", function (evt) {
-    let validate = new FormValidation(form);
-    let checkName = validate.checkName();
-    let checkEmail = validate.checkEmail();
-    let checkPassword = validate.checkPassword();
-    let checkPasswordConfirm = validate.checkPasswordConfirm();
-    let confirm = validate.checkConfirm();
-    let isFormValid =
-      checkName &&
-      checkEmail &&
-      checkPassword &&
-      checkPasswordConfirm &&
-      confirm;
+    let isFormValid = formSignUpDataValidate(form);
+
     if (!isFormValid) {
       evt.preventDefault();
       return;
